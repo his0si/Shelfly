@@ -8,8 +8,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>나의 독서 기록</h1>
-        
+        <div class="header-container">
+            <h1>독서 기록</h1>
+            <div class="user-info">
+                <span>{{ session['username'] }}님</span>
+                <a href="{{ url_for('logout') }}" class="logout-btn">로그아웃</a>
+            </div>
+        </div>
         <div class="add-book-form">
             <h2>새 책 추가하기</h2>
             <form id="bookForm" onsubmit="return false;">  <!-- onsubmit 추가 -->

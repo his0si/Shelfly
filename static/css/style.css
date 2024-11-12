@@ -28,6 +28,45 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* 기존 스타일은 그대로 두고 아래 스타일만 추가/수정 */
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.user-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info span {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.logout-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #45a049;
+}
+
 /* 폼 스타일 */
 .add-book-form {
     background: white;
