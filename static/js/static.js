@@ -9,7 +9,7 @@ class BookUI {
                 <p class="rating">${'★'.repeat(book.rating)}${'☆'.repeat(5-book.rating)}</p>
             </div>
             <div class="book-actions">
-                <button class="edit-btn" title="수정">✏️</button>
+                <button class="edit-btn" title="수정">🖋️</button>
                 <button class="delete-btn" title="삭제">🗑️</button>
             </div>
         `;

@@ -7,28 +7,41 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f5f5f5;
-    color: #333;
+    background: linear-gradient(135deg, #e8f4ff 0%, #4e8cff 100%);
+    color: #ffffff;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 20px;
 }
 
+.title-section {
+    text-align: center;
+}
+
+.title-section h3 {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 h1 {
     text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
-
-/* 기존 스타일은 그대로 두고 아래 스타일만 추가/수정 */
 
 .header-container {
     display: flex;
@@ -49,12 +62,13 @@ h2 {
 }
 
 .user-info span {
-    color: #2c3e50;
+    color: #ffffff;
     font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .logout-btn {
-    background-color: #4CAF50;
+    background-color: #4e8cff;
     color: white;
     padding: 8px 16px;
     border-radius: 4px;
@@ -64,12 +78,12 @@ h2 {
 }
 
 .logout-btn:hover {
-    background-color: #45a049;
+    background-color: #3d7ae6;
 }
 
 /* 폼 스타일 */
 .add-book-form {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -99,27 +113,48 @@ h2 {
 .rating label {
     display: block;
     margin-bottom: 5px;
+    color: #000000;
 }
 
-/* 버튼 스타일 */
-.submit-btn {
-    background-color: #4CAF50;
+/* 버튼 스타일 통일 */
+.submit-btn, 
+.save-btn,
+.logout-btn,
+.edit-btn,
+.delete-btn {
+    background-color: #4e8cff !important;
     color: white;
-    padding: 12px 20px;
+    padding: 8px 16px;
     border: none;
     border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
     cursor: pointer;
-    font-size: 16px;
+}
+
+.submit-btn:hover, 
+.save-btn:hover,
+.logout-btn:hover,
+.edit-btn:hover,
+.delete-btn:hover {
+    background-color: #3d7ae6 !important;
+}
+
+.submit-btn:active, 
+.save-btn:active,
+.logout-btn:active,
+.edit-btn:active,
+.delete-btn:active {
+    background-color: #2c69d4 !important;
+}
+
+/* 추가 버튼 특별 스타일 */
+.submit-btn {
     width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
     margin-top: 10px;
-}
-
-.submit-btn:hover {
-    background-color: #45a049;
-}
-
-.submit-btn:active {
-    background-color: #3d8b40;
 }
 
 /* 책 목록 스타일 */
@@ -135,7 +170,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 10px;
@@ -154,11 +189,11 @@ h2 {
 
 .book-content h3 {
     margin-bottom: 5px;
-    color: #2c3e50;
+    color: #000000;
 }
 
 .book-content .author {
-    color: #666;
+    color: #000000;
     font-size: 0.9em;
 }
 
@@ -173,13 +208,17 @@ h2 {
 }
 
 .edit-btn, .delete-btn {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background: none;
-    font-size: 1.2em;
-    transition: transform 0.2s;
+    width: 35px !important;
+    height: 35px !important;
+    padding: 4px !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    background-color: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
 }
 
 .edit-btn:hover, .delete-btn:hover {
@@ -199,7 +238,7 @@ h2 {
 }
 
 .modal-content {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
@@ -215,7 +254,7 @@ h2 {
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-    color: #666;
+    color: #000000;
 }
 
 .close:hover {
@@ -229,18 +268,19 @@ h2 {
 
 .book-detail h2 {
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #000000;
 }
 
 .book-detail p {
     margin: 10px 0;
     line-height: 1.6;
+    color: #000000;
 }
 
 .book-detail .review {
     margin-top: 20px;
     padding: 15px;
-    background: #f5f5f5;
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 4px;
 }
 
@@ -260,7 +300,7 @@ h2 {
 }
 
 .save-btn {
-    background-color: #4CAF50;
+    background-color: #4e8cff;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -270,27 +310,25 @@ h2 {
 }
 
 .save-btn:hover {
-    background-color: #45a049;
+    background-color: #3d7ae6;
 }
 
-/* 알림 메시지 스타일 */
+/* 알림 메시지 스타일 수정 */
 .alert {
     padding: 15px;
     margin-bottom: 20px;
-    border: 1px solid transparent;
+    border: none;
     border-radius: 4px;
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+    color: #ffffff;
+    background-color: rgba(78, 140, 255, 0.9);
 }
 
 .alert-error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+    color: #ffffff;
+    background-color: rgba(255, 82, 82, 0.9);
 }
 
 /* 반응형 디자인 */
@@ -307,4 +345,39 @@ h2 {
         width: 95%;
         margin: 10% auto;
     }
+}
+
+/* 흰색 텍스트에 그림자 추가 (특정 제목들 제외) */
+.title-section h3,
+h1,
+.user-info span {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* 검은색 텍스트로 변경하고 그림자 제거할 제목들 */
+.add-book-form h2,
+.modal-content h2 {
+    color: #000000;
+    text-shadow: none;
+}
+
+/* 로그인/회원가입 폼 스타일 수정 */
+.login-form,
+.signup-form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.login-form input,
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
 }

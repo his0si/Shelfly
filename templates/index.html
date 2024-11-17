@@ -9,7 +9,10 @@
 <body>
     <div class="container">
         <div class="header-container">
-            <h1>독서 기록</h1>
+            <div class="title-section">
+                <h3>Book Repository</h3>
+                <h1>📖 독서 기록</h1>
+            </div>
             <div class="user-info">
                 <span>{{ session['username'] }}님</span>
                 <a href="{{ url_for('logout') }}" class="logout-btn">로그아웃</a>

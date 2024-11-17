@@ -1,3 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #e8f4ff 0%, #4e8cff 100%);
+    color: #000000;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -13,12 +33,12 @@
 }
 
 .user-info span {
-    color: #2c3e50;
+    color: #000000;
     font-weight: 500;
 }
 
 .logout-btn {
-    background-color: #e74c3c;
+    background-color: #4e8cff;
     color: white;
     padding: 8px 16px;
     border-radius: 4px;
@@ -28,14 +48,14 @@
 }
 
 .logout-btn:hover {
-    background-color: #c0392b;
+    background-color: #3d7ae6;
 }
 
 .auth-container {
+    background: rgba(255, 255, 255, 0.9);
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -54,10 +74,11 @@
 
 .form-group label {
     font-weight: bold;
-    color: #333;
+    color: #000000;
 }
 
 .form-group input {
+    width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -65,13 +86,15 @@
 }
 
 .auth-button {
-    padding: 12px;
-    background: #4CAF50;
+    background-color: #4e8cff !important;
     color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
 .auth-button:disabled {
@@ -80,7 +103,7 @@
 }
 
 .auth-button:not(:disabled):hover {
-    background: #45a049;
+    background-color: #3d7ae6 !important;
 }
 
 .validation-message {
@@ -102,7 +125,7 @@
 }
 
 .auth-link a {
-    color: #4CAF50;
+    color: #4e8cff;
     text-decoration: none;
 }
 
