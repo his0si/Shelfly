@@ -2,10 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Stylish', serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Stylish', serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #e8f4ff 0%, #4e8cff 100%);
     color: #ffffff;
@@ -47,7 +48,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     padding: 20px 0;
     position: relative;
 }
@@ -83,7 +84,7 @@ h2 {
 
 /* 폼 스타일 */
 .add-book-form {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -92,13 +93,18 @@ h2 {
 
 .add-book-form input,
 .add-book-form textarea,
-.add-book-form select {
+.add-book-form select,
+.edit-form input,
+.edit-form textarea,
+.edit-form select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    background: rgba(255, 255, 255, 0);
+    font-family: 'Stylish', serif;
 }
 
 .add-book-form textarea {
@@ -131,6 +137,7 @@ h2 {
     font-weight: 500;
     transition: background-color 0.2s;
     cursor: pointer;
+    font-family: 'Stylish', serif;
 }
 
 .submit-btn:hover, 
@@ -170,7 +177,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-bottom: 10px;
@@ -208,8 +215,8 @@ h2 {
 }
 
 .edit-btn, .delete-btn {
-    width: 35px !important;
-    height: 35px !important;
+    width: 32px !important;
+    height: 32px !important;
     padding: 4px !important;
     border: none !important;
     border-radius: 4px !important;
@@ -238,7 +245,7 @@ h2 {
 }
 
 .modal-content {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
     margin: 15% auto;
     padding: 20px;
     border-radius: 8px;
@@ -280,7 +287,7 @@ h2 {
 .book-detail .review {
     margin-top: 20px;
     padding: 15px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 4px;
 }
 
@@ -297,6 +304,7 @@ h2 {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-family: 'Stylish', serif;
 }
 
 .save-btn {
@@ -307,6 +315,7 @@ h2 {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    font-family: 'Stylish', serif;
 }
 
 .save-btn:hover {
@@ -362,22 +371,8 @@ h1,
     text-shadow: none;
 }
 
-/* 로그인/회원가입 폼 스타일 수정 */
-.login-form,
-.signup-form {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 30px;
-}
-
-.login-form input,
-.signup-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+    background: #ffffff;
 }

@@ -260,6 +260,40 @@ def get_books():
             "message": f"책 목록을 가져오는 중 오류가 발생했습니다: {str(e)}"
         }), 500
 
+# 책 수정
+@app.route('/edit_book/<int:book_id>', methods=['POST'])
+@login_required
+def edit_book(book_id):
+    try:
+        data = request.json
+        user_id = session['user_id']
+        
+        conn = get_db()
+        cursor = conn.cursor()
+        
+        # 책이 현재 사용자의 것인지 확인
+        cursor.execute("SELECT user_id FROM books WHERE id = ?", (book_id,))
+        book = cursor.fetchone()
+        
+        if not book or book[0] != user_id:
+            return jsonify({"error": "권한이 없습니다."}), 403
+            
+        cursor.execute("""
+            UPDATE books 
+            SET title = ?, author = ?, rating = ?, review = ?
+            WHERE id = ? AND user_id = ?
+        """, (data['title'], data['author'], data['rating'], 
+              data.get('review', ''), book_id, user_id))
+        
+        conn.commit()
+        return jsonify({"success": True, "message": "책이 수정되었습니다."})
+        
+    except Exception as e:
+        print(f"Error editing book: {e}")
+        return jsonify({"error": "책 수정 중 오류가 발생했습니다."}), 500
+    finally:
+        conn.close()
+
 # 서버 시작
 if __name__ == '__main__':
     init_db()  # 데이터베이스 초기화
