@@ -17,7 +17,7 @@ AI의 힘으로 1-2주만에 웹을 ‘달칵’ 만들어보자!
 ## 📂 Directory Structure
 
 ```
-📂 SHELFLY
+📂 Shelfly
 ├─ 📂 static                 ▶︎ 정적 파일들이 저장된 디렉토리
 │  ├─ 📂 css
 │  ├─ 📂 image
