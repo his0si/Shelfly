@@ -14,4 +14,4 @@ AI의 힘으로 1-2주만에 웹을 ‘달칵’ 만들어보자!
 - 백: GPT 4o, claude
 - IDE: Cursor AI
 
-![image](https://github.com/user-attachments/assets/9d813667-6f47-48d5-991a-7052b72f26f5)
+https://github.com/user-attachments/assets/b33a3732-d66d-4e93-ad66-8c1f41c2b55d
