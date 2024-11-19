@@ -30,4 +30,8 @@ AI의 힘으로 1-2주만에 웹을 ‘달칵’ 만들어보자!
 └─ 📄 README.md 
 ```
 
-https://github.com/user-attachments/assets/b33a3732-d66d-4e93-ad66-8c1f41c2b55d
+
+https://github.com/user-attachments/assets/2a7a00be-8c72-40f5-aee2-dab3c74cef45
+
+
+
