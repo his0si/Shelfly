@@ -216,7 +216,7 @@ def delete_book(book_id):
             print(f"Database error: {e}")
             return jsonify({
                 "status": "error",
-                "message": f"데이터베이스 오류: {str(e)}"
+                "message": f"���이터베이스 오류: {str(e)}"
             }), 500
         finally:
             conn.close()
@@ -268,29 +268,46 @@ def edit_book(book_id):
         data = request.json
         user_id = session['user_id']
         
+        # 디버깅을 위한 로그 추가
+        print(f"Received edit request for book {book_id}")
+        print(f"Request data: {data}")
+        
         conn = get_db()
         cursor = conn.cursor()
         
-        # 책이 현재 사용자의 것인지 확인
-        cursor.execute("SELECT user_id FROM books WHERE id = ?", (book_id,))
+        # 책이 존재하는지 먼저 확인
+        cursor.execute("SELECT * FROM books WHERE id = ? AND user_id = ?", (book_id, user_id))
         book = cursor.fetchone()
         
-        if not book or book[0] != user_id:
-            return jsonify({"error": "권한이 없습니다."}), 403
+        if not book:
+            print(f"Book {book_id} not found or doesn't belong to user {user_id}")
+            return jsonify({"error": "책을 찾을 수 없거나 권한이 없습니다."}), 404
             
+        # 업데이트 쿼리 실행
         cursor.execute("""
             UPDATE books 
             SET title = ?, author = ?, rating = ?, review = ?
             WHERE id = ? AND user_id = ?
-        """, (data['title'], data['author'], data['rating'], 
-              data.get('review', ''), book_id, user_id))
+        """, (
+            data.get('title'),
+            data.get('author'),
+            data.get('rating'),
+            data.get('review', ''),
+            book_id,
+            user_id
+        ))
         
         conn.commit()
-        return jsonify({"success": True, "message": "책이 수정되었습니다."})
+        
+        # 성공 로그
+        print(f"Successfully updated book {book_id}")
+        return jsonify({"success": True, "message": "책이 성공적으로 수정되었습니다."})
         
     except Exception as e:
-        print(f"Error editing book: {e}")
-        return jsonify({"error": "책 수정 중 오류가 발생했습니다."}), 500
+        # 상세한 에러 로그
+        print(f"Error editing book {book_id}: {str(e)}")
+        return jsonify({"error": f"책 수정 중 오류가 발생했습니다: {str(e)}"}), 500
+        
     finally:
         conn.close()
 
